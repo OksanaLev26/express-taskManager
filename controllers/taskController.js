@@ -60,9 +60,9 @@ router.post("/", async (req, res) => {
   // Edit - Will be handled by React application
 
   // Show
-  router.get("/:index", async (req, res) => {
+  router.get("/:id", async (req, res) => {
     try {
-      const task = await Task.findById(req.params.index);
+      const task = await Task.findById(req.params.id);
       res.json(task);
     } catch (error) {
       console.log(error);
