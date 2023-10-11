@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 const Task = require("./models/tasks");
 const taskController = require("./controllers/taskController");
 const seedData = require('./utilities/seedData');
+const cors = require('cors');
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ db.on("close", () => console.log("mongo disconnected"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(express.static("public"));
+app.use(cors({ origin: '*' }));
 
 app.use("/", taskController);
 
