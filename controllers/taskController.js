@@ -8,7 +8,6 @@ const Task = require("../models/tasks");
 router.get("/", async (req, res) => {
   try {
     const tasks = await Task.find();
-    console.log(tasks);
     res.json(tasks);
   } catch (error) {
     console.log(error);
@@ -21,7 +20,6 @@ router.get("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     const tasks = await Task.findByIdAndRemove(req.params.id);
-    console.log("delete tasks", tasks);
     res.json(tasks);
   } catch (error) {
     console.log(error);
@@ -37,7 +35,6 @@ router.put("/:id", async (req, res) => {
       req.body.completed = false;
     }
     const updatedTasks = await Task.findByIdAndUpdate(req.params.id, req.body);
-    console.log('updatedTasks', updatedTasks)
     res.json(updatedTasks);
   } catch (error) {
     console.log(error);
