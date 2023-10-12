@@ -29,6 +29,7 @@ npm install
 nodemon server
 
 The server will be available at [http://localhost:3001].
+Deployed app is available at [https://test-deploy-server-8qyd.onrender.com/].
 
 ## API Endpoints
 
